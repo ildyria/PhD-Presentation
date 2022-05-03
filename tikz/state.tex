@@ -1,0 +1,41 @@
+\begin{tikzpicture}[keccak]
+\draw [white] (0,0) rectangle (3,2); %create a bounding box to reserve space
+\begin{pgflowlevelscope}{\pgftransformscale{0.4}}
+%% Define the dimensions of the state
+\KeccakDimension{4}{3}{8}{0}{0}{0}
+
+%% Highlight a slice of the state
+\KeccakDefColour{orange!60}
+\foreach \z in {0,...,7} {
+    \foreach \y in {0,...,2} {
+        \KeccakPoint{0}{\y}{\z}
+    }
+}
+
+\KeccakDefColour{orange!40}
+\foreach \z in {0,...,7} {
+    \foreach \y in {0,...,2} {
+        \KeccakPoint{1}{\y}{\z}
+    }
+}
+
+\KeccakDefColour{orange!20}
+\foreach \z in {0,...,7} {
+    \foreach \y in {0,...,2} {
+        \KeccakPoint{2}{\y}{\z}
+    }
+}
+
+\KeccakDefColour{orange!0}
+\foreach \z in {0,...,7} {
+    \foreach \y in {0,...,2} {
+        \KeccakPoint{3}{\y}{\z}
+    }
+}
+%% Draw the state
+\KeccakState
+\end{pgflowlevelscope}
+
+\draw [->,black] (-0.5,1.75) -- (-0.5,1) node[anchor=east] {$i$};
+\draw [->,black] (-0.5,1.75) -- (0.25,1.75) node[anchor=south] {$j$};
+\end{tikzpicture}

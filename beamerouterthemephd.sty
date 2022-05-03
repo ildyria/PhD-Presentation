@@ -1,0 +1,42 @@
+\mode<presentation>
+
+% Frame title
+\defbeamertemplate*{frametitle}{phd}[1][]
+{
+	\begin{textblock*}{\paperwidth}(-0.065\paperwidth,0.75cm)
+	\begin{flushright}
+		\textcolor{PhDBlue}{\huge\textbf{\insertframetitle}}
+	\end{flushright}
+	\end{textblock*}
+}
+
+% Frame footer
+\setbeamertemplate{footline}
+{
+\ifnum\thepage>1
+\begin{tikzpicture}
+\useasboundingbox (0,0) rectangle(\the\paperwidth,1);
+
+% Colored line
+\fill[color=PhDBlue] (0,1.25) rectangle(\the\paperwidth,1.3);
+
+\end{tikzpicture}
+
+\begin{textblock*}{0.9cm}(0.1cm,9.25cm)
+\raggedleft
+{\usebeamercolor[fg]{title in head/foot}\usebeamerfont{title in head/foot}\insertframenumber/\inserttotalframenumber}
+\end{textblock*}
+
+\begin{textblock*}{3cm}(2cm,9.25cm)
+{\usebeamercolor[fg]{author in head/foot}\usebeamerfont{author in head/foot}\insertshortauthor}
+\end{textblock*}
+
+\begin{textblock*}{7cm}(\dimexpr\the\paperwidth-7.8cm,9.25cm) 
+\raggedleft
+{\usebeamercolor[fg]{block}\usebeamerfont{title in head/foot}\insertshorttitle}
+\end{textblock*}
+
+\fi % \ifnum\thepage>1
+}
+
+\mode<all>

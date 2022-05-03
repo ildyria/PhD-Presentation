@@ -1,0 +1,91 @@
+\footnotesize
+\begin{columns}[t]
+\begin{column}{0.4\linewidth}
+\begin{table}
+\begin{tabular}{l | c | r }
+	Permutation 		& Cycle/Byte		& ROM\\
+    \hline
+    \multicolumn{3}{c}{{\bf AVR ATmega}}\\
+    \hline
+    \cDrk{\bf \Gimli small}        & \avrsmallcyclesbytes      & \avrsmallrom\\
+    % \hline
+    % ChaCha20              & 238      & --              \\
+    \hline
+    Salsa20                    & 216      & 1\,750\\
+    \hline
+    \cDrk{\bf \Gimli fast}         & \avrfastcyclesbytes      & \avrfastrom\\
+    \hline
+    AES-128~small            & 171      & 1\,570\\
+    \hline
+    AES-128~fast             & 155      & 3\,098\\
+    \hline
+
+    \hline
+    \hline
+    \multicolumn{3}{c}{{\bf ARM Cortex-M0}}\\
+    \hline
+    \cDrk{\bf \Gimli}       & 49 	& \mzerorom\\
+    \hline
+    ChaCha20  					    & 40 	& --\\
+    \hline
+    Chaskey 						& 17 	&   414\\
+    \hline
+
+    \hline
+    \hline
+    \multicolumn{3}{c}{{\bf ARM Cortex-M3/M4}}\\
+    \hline
+    Keccak-$f[400,20]$ 	& 106 			& 540   \\
+    \hline
+    AES-128 			&  34 			&   3\,216\\
+    \hline
+    \cDrk{\bf \Gimli} 		& \mthreecpb & \mthreerom\\
+    \hline
+    ChaCha20 			& 13 			& 2\,868\\
+    \hline
+    Chaskey 			&  7 			&   908\\
+    \hline
+\end{tabular}
+\end{table}
+\end{column}
+\begin{column}{0.55\linewidth}
+\begin{table}
+\begin{tabular}{l r | c | r }
+	\multicolumn{2}{l|}{Permutation} 		& Cycle/Byte		& ROM\\
+    \hline
+    \multicolumn{4}{c}{{\bf ARM Cortex-A8}}\\
+    \hline
+    \multicolumn{2}{l|}{Keccak-$f[400]$~(KetjeSR)}       & 37.52			& --\\
+    \hline
+    AES-128 							&$(x$ blocks$)$ & 19.25 		& --\\
+    \hline
+    \cDrk{\bf \Gimli}		&$(1$ block$)$  & \neoncycles	& \neonrom\\
+    \hline
+    ChaCha20							&$(x$ blocks$)$ & 6.25			& --\\
+    \hline
+    Salsa20								&$(x$ blocks$)$ & 5.48          & --\\
+    \hline
+
+
+    \hline
+    \hline
+    \multicolumn{4}{c}{{\bf Intel Haswell}}\\
+    \hline
+    \cDrk{\bf \Gimli}		&$(1$ block$)$  & \haswellcycles & \haswellrom\\
+    \hline
+    NORX-32-4-1 						&$(1$ block$)$	& 2.84 & -- \\
+    \hline
+    \cDrk{\bf \Gimli} 		&$(2$ blocks$)$	& 2.33 & 724 \\
+    \hline
+    \cDrk{\bf \Gimli} 		&$(4$ blocks$)$	& 1.77 & 1227 \\
+    \hline
+    Salsa20 							&$(8$ blocks$)$	& 1.38 & --  \\
+    \hline
+    ChaCha20 							&$(8$ blocks$)$	& 1.20 & --  \\
+    \hline
+    AES-128 							&$(x$ blocks$)$ & 0.85 & -- \\
+    \hline
+\end{tabular}
+\end{table}
+\end{column}
+\end{columns}

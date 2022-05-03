@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+  % \begin{axis}[title  = $Resource \times Time / State$(Lower is better),
+  \begin{axis}[
+    xbar,
+    reverse legend,
+    area legend,
+    y axis line style = { opacity = 0 },
+    axis x line       = none,
+    tickwidth         = 0pt,
+    enlarge y limits  = 0.3,
+    enlarge x limits  = 0.02,
+    symbolic y coords = {Spartan 6, ST 28nm, UMC L180},
+    nodes near coords,
+	legend style={at={(1,0.02)},anchor=south,draw=none},
+	legend cell align={left},
+  ]
+  asconcolor
+  \addplot[fill=gimlicolor,	 fill opacity=0.7, color=gimlicolor,  text opacity=1] coordinates {(175.9,Spartan 6)	(418.6,ST 28nm)	 (1382.9,UMC L180)	};
+  \addplot[fill=asconcolor,  fill opacity=0.8, color=asconcolor,  text opacity=1] coordinates {(158.2,Spartan 6)	(577.6,ST 28nm)	 (1671.7,UMC L180)	};
+  \addplot[fill=keccakcolor, fill opacity=0.7, color=keccakcolor, text opacity=1] coordinates {(587.3,Spartan 6)	(1562.4,ST 28nm) (4161.0,UMC L180)	};
+  \legend{Gimli-12, Ascon, Keccak-$f$[400;20]}
+  \end{axis}
+\end{tikzpicture}\blfootnote{latency: 2 cycles}

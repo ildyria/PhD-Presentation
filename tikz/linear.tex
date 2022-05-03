@@ -1,0 +1,115 @@
+\begin{tikzpicture}[keccak]
+
+
+    \begin{scope}[yshift=0 cm,xshift=0 cm]
+
+    \draw [fill=orange!40] (0,1+0) -- (1,1+0) -- (1,1+0.5) -- (0,1+0.5) -- cycle;
+    \draw [fill=orange!40] (1.25+0,1+0) -- (1.25+1,1+0) -- (1.25+1,1+0.5) -- (1.25+0,1+0.5) -- cycle;
+
+    \foreach \x in {0,0.5,1} {
+        \draw (\x,0) -- (\x,1.5);
+    };
+    \foreach \x in {0,0.5,...,1.5} {
+        \draw (0,\x) -- (1,\x);
+    };
+
+    \foreach \x in {1.25,1.75,2.25} {
+        \draw (\x,0) -- (\x,1.5);
+    };
+    \foreach \x in {0,0.5,...,1.5} {
+        \draw (1.25,\x) -- (2.25,\x);
+    };
+
+    \draw [<->,thick] (0.25,1.25) -- (0.75,1.25);
+    \draw [<->,thick] (1.5,1.25) -- (2,1.25);
+
+    \draw (1.12,0) node[black, anchor=north, align=left] {
+        \textit{Small Swap}
+      };
+
+    \end{scope}
+
+    \begin{scope}[yshift=0 cm,xshift=3 cm]
+
+    \draw [fill=blue!40] (0+0,1+0) -- (0+0.5,1+0) -- (0+0.5,1+0.5) -- (0+0,1+0.5) -- cycle;
+    \draw [fill=orange!30] (0.5+0,1+0) -- (0.5+0.5,1+0) -- (0.5+0.5,1+0.5) -- (0.5+0,1+0.5) -- cycle;
+    \draw [fill=blue!40] (1+0,1+0) -- (1+0.5,1+0) -- (1+0.5,1+0.5) -- (1+0,1+0.5) -- cycle;
+    \draw [fill=orange!30] (1.5+0,1+0) -- (1.5+0.5,1+0) -- (1.5+0.5,1+0.5) -- (1.5+0,1+0.5) -- cycle;
+
+    \foreach \x in {0,0.5,...,2} {
+        \draw (\x,0) -- (\x,1.5);
+    };
+    \foreach \x in {0,0.5,...,1.5} {
+        \draw (0,\x) -- (2,\x);
+    };
+
+    \draw [<->,thick] (0.25,1.15) -- (1.25,1.15);
+    \draw [<->,thick] (0.75,1.35) -- (1.75,1.35);
+
+    \draw (1,0) node[black, anchor=north, align=left] {
+        \textit{Big Swap}
+      };
+
+    \end{scope}
+
+    % \begin{scope}[yshift=0 cm,xshift=6 cm]
+
+    % \draw [fill=red!30] (0,1+0) -- (2,1+0) -- (2,1+0.5) -- (0,1+0.5) -- cycle;
+    %     \draw [fill=red!15] (0,0.5+0) -- (2,0.5+0) -- (2,0.5+0.5) -- (0,0.5+0.5) -- cycle;
+
+    %     \foreach \x in {0,0.5,...,2} {
+    %         \draw (\x,0) -- (\x,1.5);
+    %     };
+    %     \foreach \x in {0,0.5,...,1.5} {
+    %         \draw (0,\x) -- (2,\x);
+    %     };
+
+    %     \draw (2,0.75) node[black, anchor=west, align=left] {
+    %       $\times \begin{bmatrix}
+    %           0 & 1 & 1 & 1 \\
+    %           1 & 0 & 1 & 1 \\
+    %           1 & 1 & 0 & 1 \\
+    %           1 & 1 & 1 & 0
+    %       \end{bmatrix}$
+    %       };
+
+    %     \draw (0,1.5) node[black, anchor=south west, align=left] {
+    %         \textbf{Mix Sheets}
+    %   };
+
+    % % \end{scope}
+
+    % \begin{scope}[yshift=-0.5 cm,xshift=1 cm]
+
+    %     \draw(0,0) node (B0) {$b_0$};
+    %     \draw(2,0) node (B1) {$b_1$};
+    %     \draw(4,0) node (B2) {$b_2$};
+    %     \draw(6,0) node (B3) {$b_3$};
+
+    %     \draw(0,-6) node (C0) {$c_0$};
+    %     \draw(2,-6) node (C1) {$c_1$};
+    %     \draw(4,-6) node (C2) {$c_2$};
+    %     \draw(6,-6) node (C3) {$c_3$};
+
+    %     \draw[thin, black] (2.5,-1) rectangle (3.5,-2) node[minimum height=1cm,minimum width=1cm,pos=0.5] (L0) {$\mathcal{L}$};
+    %     \draw[thin, black] (2.5,-2.5) rectangle (3.5,-3.5) node[minimum height=1cm,minimum width=1cm,pos=0.5] (L1) {$\mathcal{L'}$};
+
+    %     \draw (B0.south) -- (0,-4) -- (4,-5.5) -- (C2.north);
+    %     \draw (B1.south) -- (2,-4) -- (6,-5.5) -- (C3.north);
+    %     \draw (B2.south) -- (4,-4) -- (0,-5.5) -- (C0.north);
+    %     \draw (B3.south) -- (6,-4) -- (2,-5.5) -- (C1.north);
+
+    %     \draw (0,-1.25) -- (2.5,-1.25);
+    %     \draw (2,-1.75) -- (2.5,-1.75);
+
+    %     \draw (0,-2.75) -- (2.5,-2.75);
+    %     \draw (2,-3.25) -- (2.5,-3.25);
+
+    %     \draw (3.5,-1.5) -- (4.2,-1.5);
+
+    %     \draw (3.5,-3) -- (6.2,-3);
+
+    %     \draw (4,-1.5) circle (0.2);
+    %     \draw (6,-3) circle (0.2);
+    % \end{scope}
+\end{tikzpicture}

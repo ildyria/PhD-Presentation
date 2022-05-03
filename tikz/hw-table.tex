@@ -1,0 +1,62 @@
+\scriptsize
+\begin{table}
+\label{tbl:hw_Gimli}
+\begin{tabular}{l|r|r|r|r|r}
+\hline
+Permutation & Cycles & Resources & Period (ns)& Time (ns) & Res.$\times$Time/state\\ \hline
+
+\hline
+\hline
+\multicolumn{6}{c}{\bf FPGA -- Xilinx Spartan 6 LX75} \\ \hline
+Ascon & 2 & 732 S(2700 L+325 F) & 34.570 & 70 & \cDrk{\bf 158.2} \\ \hline
+\Gimli $12r$ & 2 & 1224 S(4398 L+389 F) & 27.597 & \cDrk{\bf 56} & 175.9 \\ \hline
+Keccak & 2 & 1520 S(5555 L+405 F) & 77.281 & 155 & 587.3 \\ \hline
+% C-quark* & 2 & 2630 S(9718 L+389 F) & 98.680 & 198 & 1351.7 \\ \hline
+% Photon   & 2 & 2774 S(9430 L+293 F) & 74.587 & 150 & 1436.8 \\ \hline
+% Spongent* & 2 & 7763 S(19419 L+389 F) & 292.160 & 585 & 11812.7 \\ \hline
+\Gimli $24r$ & 1 & 2395 S(8769 L+385 F) & 56.496 & 57 & 352.4 \\ \hline
+\Gimli $8r$ & 3 & 831 S(2924 L+390 F) & 24.531 & 74 & 159.3 \\ \hline
+\Gimli $6r$ & 4 & 646 S(2398 L+390 F) & 18.669 & 75 & \cDrk{\bf 125.6} \\ \hline
+\Gimli $4r$ & 6 & 415 S(1486 L+391 F) & 8.565 & \cDrk{\bf 52} & \cDrk{\bf 55.5} \\ \hline
+% \Gimli $3r$ & 8 & 428 S(1587 L+393 F) & 10.908 & 88 & 97.3 \\ \hline
+% \Gimli $2r$ & 12 & 221 S(815 L+392 F) & 5.569 & 67 & 38.5 \\ \hline
+% \Gimli $1r$ & 24 & 178 S(587 L+394 F) & 4.941 & 119 & 55.0 \\ \hline
+\Gimli (Serial) & 108 & 139 S(492 L+397 F) & 3.996 & 432 & 156.2 \\ \hline
+
+\hline
+\hline
+\multicolumn{6}{c}{\bf 28nm ASIC -- ST 28nm FDSOI technology} \\ \hline
+\Gimli $12r$ & 2 & 35452 GE & 2.2672 & \cDrk{\bf 5} & \cDrk{\bf 418.6} \\ \hline
+Ascon & 2 & 32476 GE & 2.8457 & 6 & 577.6 \\ \hline
+Keccak & 2 & 55683 GE & 5.6117 & 12 & 1562.4 \\ \hline
+% C-quark & 2 & 111852 GE & 9.9962 & 20 & 5823.4 \\ \hline
+% Photon & 2 & 296420 GE & 10.0000 & 20 & 20584.7 \\ \hline
+% Spongent & 2 & 1432047 GE & 12.0684 & 25 & 90013.1 \\ \hline
+\Gimli $24r$ & 1 & 66205 GE & 4.2870 & 5 & 739.1 \\ \hline
+\Gimli $8r$ & 3 & 25224 GE & 1.5921 & \cDrk{\bf 5} & 313.7 \\ \hline
+% \Gimli $6r$ & 4 & 21675 GE & 2.1315 & 9 & 481.2 \\ \hline
+\Gimli $4r$ & 6 & 14999 GE & 1.0549 & 7 & \cDrk{\bf 247.2} \\ \hline
+% \Gimli $3r$ & 8 & 14808 GE & 2.0119 & 17 & 620.6 \\ \hline
+% \Gimli $2r$ & 12 & 10398 GE & 1.0598 & 13 & 344.4 \\ \hline
+% \Gimli $1r$ & 24 & 8097 GE & 1.0642 & 26 & 538.5 \\ \hline
+\Gimli (Serial) & 108 & 5843 GE & 1.5352 & 166 & 2522.7 \\ \hline
+
+\hline
+\hline
+\multicolumn{6}{c}{\bf 180nm ASIC --  UMC L180} \\ \hline
+\Gimli $12r$ & 2 & 26685 GE & 9.9500 & \cDrk{\bf 20} & \cDrk{\bf 1382.9} \\ \hline
+Ascon & 2 & 23381 GE & 11.4400 & 23 & 1671.7 \\ \hline
+Keccak & 2 & 37102 GE & 22.4300 & 45 & 4161.0 \\ \hline
+% C-quark & 2 & 62190 GE & 37.2400 & 75 & 12062.1 \\ \hline
+% Photon & 2 & 163656 GE & 99.5900 & 200 & 113183.8 \\ \hline
+% Spongent & 2 & 234556 GE & 99.9900 & 200 & 122151.9 \\ \hline
+\Gimli $24r$ & 1 & 53686 GE & 17.4500 & 18 & 2439.6 \\ \hline
+\Gimli $8r$ & 3 & 19393 GE & 7.9100 & 24 & \cDrk{\bf 1198.4} \\ \hline
+% \Gimli $6r$ & 4 & 15886 GE & 12.5100 & 51 & 2070.0 \\ \hline
+\Gimli $4r$ & 6 & 11008 GE & 10.1700 & 62 & 1749.1 \\ \hline
+% \Gimli $3r$ & 8 & 10106 GE & 10.0500 & 81 & 2115.8 \\ \hline
+% \Gimli $2r$ & 12 & 7112 GE & 15.2000 & 183 & 3377.8 \\ \hline
+% \Gimli $1r$ & 24 & 5314 GE & 9.5200 & 229 & 3161.4 \\ \hline
+\Gimli (Serial) & 108 & 3846 GE & 11.2300 & 1213 & 12146.0 \\ \hline
+\end{tabular}\blfootnote{\scriptsize{Gates Equivalent(GE). Slice(S). LUT(L). Flip-Flop(F).}}
+\end{table}

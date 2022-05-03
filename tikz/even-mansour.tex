@@ -1,0 +1,26 @@
+\begin{tikzpicture}[scale=1]
+
+  \tikzstyle{every node}=[transform shape];
+  \tikzstyle{every node}=[node distance=1.2cm];
+
+	% data path
+    \node (XOR-1)[XOR,scale=1] {};
+    \node [left of=XOR-1] (p) {$M$};
+	\node (f-1) [right of=XOR-1,draw,rectangle,thick,minimum width=1.5em] {$f$};
+	\path[line] (p) edge (XOR-1);
+	\path[line] (XOR-1) edge (f-1);
+
+    \node (XOR-2)[right of=f-1,XOR,scale=1] {};
+	\path[line] (f-1) edge (XOR-2);
+	\node (f-2) [right of=XOR-2] {};
+	\path[line] (XOR-2) edge (f-2) ;
+	\node [right of=XOR-2,node distance=1.3cm] {$C$};
+
+	%% Subkeys
+	\node (k-0) [above=0.6cm of XOR-1] {};
+	\path[line] (k-0) node[above] {\small $k_{0}$} edge (XOR-1);
+
+	\node (k-1) [above=0.6cm of XOR-2] {};
+	\path[line] (k-1) node[above] {\small $k_{1}$} edge (XOR-2);
+
+\end{tikzpicture}

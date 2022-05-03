@@ -1,0 +1,182 @@
+	\begin{tikzpicture}
+
+		\def\spacelegendX{3.2}
+		\def\spacelegendY{-0.5}
+		\begin{scope}[xshift=0 cm,yshift=-6.5 cm]
+			\draw[gimlicolor,fill=gimlicolor] (0,0) rectangle (0.7,0.3);
+			\node[anchor=west] at (0.7,0.15) {\bf \Gimli};
+
+			\draw[chaskeycolor,fill=chaskeycolor,fill opacity=0.5] (0+\spacelegendX,0) rectangle (0.7+\spacelegendX,0.3);
+			\node[anchor=west] at (0.7+\spacelegendX,0.15) {Chaskey};
+
+			\draw[salsacolor,fill=salsacolor,fill opacity=0.5] (0+2*\spacelegendX,0) rectangle (0.7+2*\spacelegendX,0.3);
+			\node[anchor=west] at (0.7+2*\spacelegendX,0.15) {Salsa20};
+
+			\draw[chachacolor,fill=chachacolor,fill opacity=0.5] (0+3*\spacelegendX,0) rectangle (0.7+3*\spacelegendX,0.3);
+			\node[anchor=west] at (0.7+3*\spacelegendX,0.15) {ChaCha20};
+
+			\draw[aescolor,fill=aescolor,fill opacity=0.5] (0,0+\spacelegendY) rectangle (0.7,0.3+\spacelegendY);
+			\node[anchor=west] at (0.7,0.15+\spacelegendY) {AES-128};
+
+			\draw[norxcolor,fill=norxcolor,fill opacity=0.5] (0+1*\spacelegendX,0+\spacelegendY) rectangle (0.7+1*\spacelegendX,0.3+\spacelegendY);
+			\node[anchor=west] at (0.7+1*\spacelegendX,0.15+\spacelegendY) {NORX-32-4-1};
+
+			\draw[keccakcolor,fill=keccakcolor,fill opacity=0.5] (0+2*\spacelegendX,0+\spacelegendY) rectangle (0.7+2*\spacelegendX,0.3+\spacelegendY);
+			\node[anchor=west] at (0.7+2*\spacelegendX,0.15+\spacelegendY) {Keccak-$f$[400,12]};
+
+			\draw[keccakcolor,fill=keccakcolor,fill opacity=0.3] (0+3*\spacelegendX,0+\spacelegendY) rectangle (0.7+3*\spacelegendX,0.3+\spacelegendY);
+			\node[anchor=west] at (0.7+3*\spacelegendX,0.15+\spacelegendY) {Keccak-$f$[800,12]};
+
+
+		\end{scope}
+
+		\begin{scope}[yshift=0 cm]
+   			\node[anchor=south] (img) at (2.5,-0.1) {\bf AVR ATmega};
+			\begin{axis}[
+				at={(0cm,-2cm)},
+				width=6cm,
+				height=4cm,
+				xbar,
+				bar width=0.25cm,
+				y axis line style = { opacity = 0 },
+				axis x line       = none,
+				xmin=0,
+				tickwidth         = 0pt,
+				ytick=\empty,
+				symbolic y coords = {AVR},
+				nodes near coords,
+			]
+			\addplot[fill=aescolor,		fill opacity=0.5, color=aescolor,	text opacity=1] coordinates {(151,AVR)};
+			\addplot[fill=aescolor,		fill opacity=0.5, color=aescolor,	text opacity=1] coordinates {(171,AVR)};
+			\addplot[fill=gimlicolor,	fill opacity=1, color=gimlicolor,	text opacity=1] coordinates {(213,AVR)};
+			\addplot[fill=salsacolor,	fill opacity=0.5, color=salsacolor,	text opacity=1] coordinates {(216,AVR)};
+			\addplot[fill=gimlicolor,	fill opacity=1, color=gimlicolor	,text opacity=1] coordinates {(413,AVR)};
+			\end{axis}
+			\node[anchor=west] (img) at (4.6cm,-0.15cm) {\scriptsize\textit{small}};
+			\node[anchor=west] (img) at (2.65cm,-0.8cm) {\scriptsize\textit{fast}};
+			\node[anchor=west] (img) at (2.25cm,-1.12cm) {\scriptsize\textit{small}};
+			\node[anchor=west] (img) at (2.1cm,-1.45cm) {\scriptsize\textit{fast}};
+		\end{scope}
+
+		\pause
+
+		\begin{scope}[yshift=-2.4 cm]
+       			\node[anchor=south] (img) at (2.5,-0.05cm) {\bf Cortex-M0};
+       			\begin{axis}[
+				at={(0cm,-1.15cm)},
+				width=6cm,
+				height=3cm,
+				xbar,
+				bar width=0.25cm,
+				y axis line style = { opacity = 0 },
+				axis x line       = none,
+				xmin=0,
+				tickwidth         = 0pt,
+				symbolic y coords = {ARMv6-M},
+				ytick=\empty,
+				nodes near coords,
+			]
+			\addplot[fill=chaskeycolor,	fill opacity=0.5, color=chaskeycolor,	text opacity=1] coordinates {(9.8,ARMv6-M)};
+			\addplot[fill=chachacolor,	fill opacity=0.5, color=chachacolor,	text opacity=1] coordinates {(40,ARMv6-M)};
+			\addplot[fill=gimlicolor,	fill opacity=1, color=gimlicolor,		text opacity=1] coordinates {(49,ARMv6-M)};
+			\end{axis}
+		\end{scope}
+
+		\pause
+
+		\begin{scope}[yshift=-4.3 cm]
+   			\node[anchor=south] (img) at (2.5,0) {\bf Cortex-M3/M4};
+			\begin{axis}[
+				at={(0cm,-1.75cm)},
+				width=6cm,
+				height=3.7cm,
+				xbar,
+				bar width=0.25cm,
+				y axis line style = { opacity = 0 },
+				axis x line       = none,
+				xmin=0,
+				tickwidth         = 0pt,
+				symbolic y coords = {ARMv7-M},
+				ytick=\empty,
+				nodes near coords,
+			]
+			\addplot[fill=chaskeycolor,	fill opacity=0.5, color=chaskeycolor,	text opacity=1] coordinates {(7,ARMv7-M)};
+			\addplot[fill=chachacolor,	fill opacity=0.5, color=chachacolor,	text opacity=1] coordinates {(13,ARMv7-M)};
+			\addplot[fill=gimlicolor,	fill opacity=1, color=gimlicolor,		text opacity=1] coordinates {(21,ARMv7-M)};
+			\addplot[fill=aescolor,		fill opacity=0.5, color=aescolor,		text opacity=1] coordinates {(34,ARMv7-M)};
+			\addplot[fill=keccakcolor,	fill opacity=0.5, color=keccakcolor,	text opacity=1] coordinates {(63,ARMv7-M)};
+			\end{axis}
+		\end{scope}
+
+		\pause
+
+		\begin{scope}[xshift=6 cm,yshift=0 cm]
+			\node[anchor=south] (img) at (2.5,0) {\bf Cortex-A8};
+			\begin{axis}[
+				at={(0cm,-2.0cm)},
+				width=6cm,
+				height=4cm,
+				xbar,
+				bar width=0.25cm,
+				y axis line style = { opacity = 0 },
+				axis x line       = none,
+				xmin=0,
+				tickwidth         = 0pt,
+				symbolic y coords = {ARMv7-A},
+				ytick=\empty,
+				nodes near coords,
+			]
+			\addplot[fill=salsacolor,	fill opacity=0.5, color=salsacolor,		text opacity=1] coordinates {(5.48,ARMv7-A)};
+			\addplot[fill=chachacolor,	fill opacity=0.5, color=chachacolor,	text opacity=1] coordinates {(6.25,ARMv7-A)};
+			\addplot[fill=gimlicolor,	fill opacity=1, color=gimlicolor,		text opacity=1] coordinates {(8.73,ARMv7-A)};
+			\addplot[fill=keccakcolor,	fill opacity=0.3, color=keccakcolor,	text opacity=1] coordinates {(16.9,ARMv7-A)};
+			\addplot[fill=aescolor,		fill opacity=0.5, color=aescolor,		text opacity=1] coordinates {(19.3,ARMv7-A)};
+			% \addplot[fill=keccakcolor,	fill opacity=0.5, color=keccakcolor,	text opacity=1] coordinates {(37.5,ARMv7-A)};
+			\end{axis}
+
+			% \node[anchor=west] (img) at (4.8cm,-0.1cm) {\scriptsize\textit{$1$ block}};
+			\node[anchor=west] (img) at (4.8cm,-0.15cm) {\scriptsize\textit{$x$ blocks}};
+			\node[anchor=west] (img) at (4.4cm,-0.47cm) {\scriptsize\textit{$1$ block}};
+			\node[anchor=west] (img) at (2.7cm,-0.8cm) {\scriptsize\textit{$1$ block}};
+			\node[anchor=west] (img) at (2.3cm,-1.12cm) {\scriptsize\textit{$x$ blocks}};
+			\node[anchor=west] (img) at (2.1cm,-1.45cm) {\scriptsize\textit{$x$ blocks}};
+		\end{scope}
+
+		\pause
+
+		\begin{scope}[xshift=6 cm,yshift=-2.4 cm]
+			\node[anchor=south] (img) at (2.5,0) {\bf Intel Haswell};
+			\begin{axis}[
+				at={(0cm,-2.65cm)},
+				width=6cm,
+				height=4.5cm,
+				xbar,
+				bar width=0.25cm,
+				y axis line style = { opacity = 0 },
+				axis x line       = none,
+				xmin=0,
+				tickwidth         = 0pt,
+				symbolic y coords = {Haswell},
+				ytick=\empty,
+				nodes near coords,
+			]
+			\addplot[fill=aescolor,		fill opacity=0.5, color=aescolor,		text opacity=1] coordinates {(0.85,Haswell)};
+			\addplot[fill=chachacolor,	fill opacity=0.5, color=chachacolor,	text opacity=1] coordinates {(1.2,Haswell)};
+			\addplot[fill=salsacolor,	fill opacity=0.5, color=salsacolor,		text opacity=1] coordinates {(1.38,Haswell)};
+			\addplot[fill=gimlicolor,	fill opacity=1, color=gimlicolor,		text opacity=1] coordinates {(1.77,Haswell)};
+			\addplot[fill=gimlicolor,	fill opacity=1, color=gimlicolor,		text opacity=1] coordinates {(2.33,Haswell)};
+			\addplot[fill=norxcolor,	fill opacity=0.5, color=norxcolor,		text opacity=1] coordinates {(2.84,Haswell)};
+			\addplot[fill=gimlicolor,	fill opacity=1, color=gimlicolor,		text opacity=1] coordinates {(4.46,Haswell)};
+			\addplot[fill=keccakcolor,	fill opacity=0.3, color=keccakcolor,	text opacity=1] coordinates {(6.76,Haswell)};
+			\end{axis}
+			\node[anchor=west] (img) at (4.74cm,-0.08cm) {\scriptsize\textit{$1$ blocks}};
+			\node[anchor=west] (img) at (3.5cm,-0.4cm) {\scriptsize\textit{$1$ block}};
+			\node[anchor=west] (img) at (3cm,-0.75cm) {\scriptsize\textit{$1$ block}};
+			\node[anchor=west] (img) at (2.5cm,-1.05cm) {\scriptsize\textit{$2$ blocks}};
+			\node[anchor=west] (img) at (2.2cm,-1.37cm) {\scriptsize\textit{$4$ blocks}};
+			\node[anchor=west] (img) at (2cm,-1.69cm) {\scriptsize\textit{$8$ blocks}};
+			\node[anchor=west] (img) at (1.8cm,-2.0cm) {\scriptsize\textit{$8$ blocks}};
+			\node[anchor=west] (img) at (1.5cm,-2.32cm) {\scriptsize\textit{$x$ blocks}};
+		\end{scope}
+
+	\end{tikzpicture}

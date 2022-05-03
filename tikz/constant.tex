@@ -1,0 +1,37 @@
+\begin{tikzpicture}[keccak]
+
+\begin{pgflowlevelscope}{\pgftransformscale{0.45}}
+%% Define the dimensions of the state
+\KeccakDimension{4}{3}{8}{0}{0}{0}
+
+\KeccakDefColour{orange!40}
+\foreach \z in {0,...,7} {
+    \KeccakPoint{0}{2}{\z}
+}
+% %% Draw the state
+\KeccakState
+
+%% Define the dimensions of the state
+\KeccakDimension{1}{1}{8}{-4}{2}{0}
+
+\KeccakDefColour{orange!10}
+\foreach \z in {0,...,7} {
+    \KeccakPoint{0}{0}{\z}
+}
+\KeccakState
+
+
+\path[shift={(0.5,0.5)}] (-1.9,2) node {\huge \textbf{$\oplus$}};
+\path[shift={(0.5,0.5,-0.5)}] (-3.5,2,0) node {\huge \textbf{\texttt{9}}};
+\path[shift={(0.5,0.5,-0.5)}] (-3.5,2,-1) node {\huge \textbf{\texttt{e}}};
+\path[shift={(0.5,0.5,-0.5)}] (-3.5,2,-2) node {\huge \textbf{\texttt{3}}};
+\path[shift={(0.5,0.5,-0.5)}] (-3.5,2,-3) node {\huge \textbf{\texttt{7}}};
+\path[shift={(0.5,0.5,-0.5)}] (-3.5,2,-4) node {\huge \textbf{\texttt{7}}};
+\path[shift={(0.5,0.5,-0.5)}] (-3.5,2,-5) node {\huge \textbf{\texttt{9}}};
+\path[shift={(0.5,0.5,-0.5)}] (-3.5,2,-6) node {\huge \textbf{\texttt{?}}};
+\path[shift={(0.5,0.5,-0.5)}] (-3.5,2,-7) node {\huge \textbf{\texttt{?}}};
+\draw [very thick,->] (-2.4,2.25,0) -- (-0.4,2.25,0);
+
+\end{pgflowlevelscope}
+
+\end{tikzpicture}
